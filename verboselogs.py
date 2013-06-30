@@ -2,7 +2,7 @@
 Verbose log level for Python's logging module.
 
 Author: Peter Odding <peter@peterodding.com>
-Last Change: May 30, 2013
+Last Change: June 30, 2013
 URL: https://pypi.python.org/pypi/verboselogs
 """
 
@@ -16,14 +16,20 @@ class VerboseLogger(logging.Logger):
 
     """
     Custom logger class that supports the additional logging level
-    "verbose" whose severity sits between "info" and "debug".
+    'verbose' whose severity sits between 'info' and 'debug'.
     """
 
     def __init__(self, *args, **kw):
         """
-        Initialize the superclass and define the custom "verbose" log level.
+        Initialize the superclass and set the root logger as the parent of this
+        logger. The function :py:func:`logging.getLogger()` is normally
+        responsible for defining the hierarchy of logger objects however
+        because verbose loggers are created by calling the
+        :py:class:`VerboseLogger` constructor, we're responsible for defining
+        the parent relationship ourselves.
         """
         logging.Logger.__init__(self, *args, **kw)
+        self.parent = logging.getLogger()
 
     def verbose(self, *args, **kw):
         """

@@ -9,7 +9,7 @@ readme_file = join(dirname(abspath(__file__)), 'README.rst')
 readme_text = open(readme_file, 'r').read()
 
 setup(name='verboselogs',
-      version='1.0',
+      version='1.0.1',
       description="Verbose logging for Python's logging module",
       long_description=readme_text,
       url='https://pypi.python.org/pypi/verboselogs',
