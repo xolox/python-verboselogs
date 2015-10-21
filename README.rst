@@ -1,5 +1,5 @@
-verboselogs: Verbose logging for Python's logging module
-========================================================
+verboselogs: Verbose logging level for Python's logging module
+==============================================================
 
 The ``verboselogs.VerboseLogger`` class extends `logging.Logger`_  to add the
 log level ``VERBOSE``. This log level sits between the predefined ``INFO`` and

@@ -2,15 +2,19 @@
 Verbose log level for Python's logging module.
 
 Author: Peter Odding <peter@peterodding.com>
-Last Change: June 30, 2013
+Last Change: October 21, 2015
 URL: https://pypi.python.org/pypi/verboselogs
 """
 
 import logging
 
+# Semi-standard module versioning.
+__version__ = '1.0.2'
+
 # Define the numeric value and label of the verbose level.
 logging.VERBOSE = 15
 logging.addLevelName(logging.VERBOSE, 'VERBOSE')
+
 
 class VerboseLogger(logging.Logger):
 
