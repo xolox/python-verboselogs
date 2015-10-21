@@ -109,7 +109,7 @@ License
 
 This software is licensed under the `MIT license`_.
 
-© 2013 Peter Odding.
+© 2015 Peter Odding.
 
 .. External references:
 .. _GitHub: https://github.com/xolox/python-verboselogs
