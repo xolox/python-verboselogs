@@ -98,7 +98,7 @@ and configurable logging::
 Contact
 -------
 
-The latest version of ``verboselogs`` is available on PyPi_ and GitHub_
+The latest version of `verboselogs` is available on PyPI_ and GitHub_
 (although I don't suppose it will ever change, since it's so incredibly
 simple). For bug reports please create an issue on GitHub_. If you have
 questions, suggestions, etc. feel free to send me an e-mail at
@@ -115,7 +115,7 @@ This software is licensed under the `MIT license`_.
 .. _GitHub: https://github.com/xolox/python-verboselogs
 .. _MIT license: http://en.wikipedia.org/wiki/MIT_License
 .. _peter@peterodding.com: peter@peterodding.com
-.. _PyPi: https://pypi.python.org/pypi/verboselogs
+.. _PyPI: https://pypi.python.org/pypi/verboselogs
 .. _logging.Logger: http://docs.python.org/2/library/logging.html#logger-objects
 .. _numeric values: http://docs.python.org/2/howto/logging.html#logging-levels
 .. _descriptions: http://docs.python.org/2/howto/logging.html#when-to-use-logging
