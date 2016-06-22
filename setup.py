@@ -1,40 +1,45 @@
 #!/usr/bin/env python
 
-"""Setup script for the `verboselogs` package."""
-
+# Verbose and spam log levels for Python's logging module.
+#
 # Author: Peter Odding <peter@peterodding.com>
 # Last Change: June 22, 2016
 # URL: https://github.com/xolox/python-verboselogs
 
+"""Setup script for the `verboselogs` package."""
+
 # Standard library modules.
 import codecs
 import os
-import sys
+import re
 
 # De-facto standard solution for Python packaging.
 from setuptools import find_packages, setup
 
-# Find the directory where the source distribution was unpacked.
-source_directory = os.path.dirname(os.path.abspath(__file__))
 
-# Add the directory with the source distribution to the search path.
-sys.path.append(source_directory)
+def get_contents(*args):
+    """Get the contents of a file relative to the source distribution directory."""
+    with codecs.open(get_absolute_path(*args), 'r', 'UTF-8') as handle:
+        return handle.read()
 
-# Import the module to find the version number (this is safe because we don't
-# have any external dependencies).
-from verboselogs import __version__ as version_string
 
-# Fill in the long description (for the benefit of PyPI)
-# with the contents of README.rst (rendered by GitHub).
-readme_file = os.path.join(source_directory, 'README.rst')
-with codecs.open(readme_file, 'r', 'utf-8') as handle:
-    readme_text = handle.read()
+def get_version(*args):
+    """Extract the version number from a Python module."""
+    contents = get_contents(*args)
+    metadata = dict(re.findall('__([a-z]+)__ = [\'"]([^\'"]+)', contents))
+    return metadata['version']
+
+
+def get_absolute_path(*args):
+    """Transform relative pathnames into absolute pathnames."""
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), *args)
+
 
 setup(
     name='verboselogs',
-    version=version_string,
+    version=get_version('verboselogs', '__init__.py'),
     description="Verbose logging level for Python's logging module",
-    long_description=readme_text,
+    long_description=get_contents('README.rst'),
     url='https://github.com/xolox/python-verboselogs',
     author='Peter Odding',
     author_email='peter@peterodding.com',
@@ -52,6 +57,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Topic :: Software Development',
+        'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: System',
         'Topic :: System :: Logging',
