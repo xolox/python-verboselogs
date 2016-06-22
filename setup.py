@@ -37,7 +37,7 @@ setup(
     url='https://github.com/xolox/python-verboselogs',
     author='Peter Odding',
     author_email='peter@peterodding.com',
-    py_modules=['verboselogs'],
+    py_modules=['verboselogs', 'verboselogs_pylint'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

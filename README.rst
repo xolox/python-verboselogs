@@ -17,7 +17,7 @@ NOTSET    0              When a logger is created, the level is set to NOTSET
                          (note that the root logger is created with level
                          WARNING). **In practice this level is never explicitly
                          used; it's mentioned here only for completeness.**
-SPAM      5              **Way to verbose for regular debugging, but nice to
+SPAM      5              **Way too verbose for regular debugging, but nice to
                          have when someone is getting desperate in a late night
                          debugging session and decides that they want as much
                          instrumentation as possible! :-)**
@@ -106,10 +106,34 @@ and configurable logging::
    # Your code goes here.
    ...
 
+If you want to set ``verboselogs.VerboseLogger`` as the default logging class
+for all subsequent logger instances, you can do so::
+
+   import logging
+   import verboselogs
+
+   logging.setLoggerClass(verboselogs.VerboseLogger)
+   logger = logging.getLogger(__name__) # will be a VerboseLogger instance
+
+
+PyLint plugin
+-------------
+If using the above ``logging.setLoggerClass`` approach, `Pylint`_ is not
+smart enough to recognize that ``logging`` is using ``verboselogs``, resulting
+in errors like::
+
+   E:285,24: Module 'logging' has no 'VERBOSE' member (no-member)
+   E:375,12: Instance of 'RootLogger' has no 'verbose' member (no-member)
+
+To fix this, ``verboselogs`` provides a Pylint plugin ``verboselogs_pylint``
+which, when loaded with ``pylint --load-plugins verboselogs_pylint``, adds
+the ``verboselogs`` methods and constants to Pylint's understanding of the
+``logging`` module.
+
 Contact
 -------
 
-The latest version of `verboselogs` is available on PyPI_ and GitHub_. For bug
+The latest version of ``verboselogs`` is available on PyPI_ and GitHub_. For bug
 reports please create an issue on GitHub_. If you have questions, suggestions,
 etc. feel free to send me an e-mail at `peter@peterodding.com`_.
 
@@ -124,6 +148,7 @@ This software is licensed under the `MIT license`_.
 .. _GitHub: https://github.com/xolox/python-verboselogs
 .. _MIT license: http://en.wikipedia.org/wiki/MIT_License
 .. _peter@peterodding.com: peter@peterodding.com
+.. _Pylint: https://pypi.python.org/pypi/pylint
 .. _PyPI: https://pypi.python.org/pypi/verboselogs
 .. _logging.Logger: http://docs.python.org/2/library/logging.html#logger-objects
 .. _numeric values: http://docs.python.org/2/howto/logging.html#logging-levels
