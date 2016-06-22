@@ -1,6 +1,12 @@
 verboselogs: Verbose logging level for Python's logging module
 ==============================================================
 
+.. image:: https://travis-ci.org/xolox/python-verboselogs.svg?branch=master
+   :target: https://travis-ci.org/xolox/python-verboselogs
+
+.. image:: https://coveralls.io/repos/xolox/python-verboselogs/badge.png?branch=master
+   :target: https://coveralls.io/r/xolox/python-verboselogs?branch=master
+
 The ``verboselogs.VerboseLogger`` class extends `logging.Logger`_  to add the
 log levels ``VERBOSE`` and ``SPAM``. The ``VERBOSE`` level sits between the
 predefined ``INFO`` and ``DEBUG`` levels and ``SPAM`` sits between ``DEBUG``
