@@ -4,11 +4,13 @@ verboselogs: Verbose logging level for Python's logging module
 The ``verboselogs.VerboseLogger`` class extends `logging.Logger`_  to add the
 log levels ``VERBOSE`` and ``SPAM``. The ``VERBOSE`` level sits between the
 predefined ``INFO`` and ``DEBUG`` levels and ``SPAM`` sits between ``DEBUG``
-and ``NOTSET``. The code to do this is simple and short, but I still don't want
-to copy/paste it to every project I'm working on, hence this package. The table
-below shows the names, `numeric values`_ and descriptions_ of the predefined
-log levels and the ``VERBOSE`` and ``SPAM`` levels defined by this module.
-I've added some notes to the other levels, these are marked in bold:
+and ``NOTSET``. The code to do this is simple and short, but I still don't
+want to copy/paste it to every project I'm working on, hence this package. It's
+currently tested on Python 2.6, 2.7, 3.4, 3.5 and PyPy.
+
+The table below shows the names, `numeric values`_ and descriptions_ of the
+predefined log levels and the ``VERBOSE`` and ``SPAM`` levels defined by this
+module. I've added some notes to the other levels, these are marked in bold:
 
 ========  =============  =====================================================
 Level     Numeric value  Description

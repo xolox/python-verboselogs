@@ -1,0 +1,11 @@
+coloredlogs >= 5.0
+mock >= 1.0.1
+pytest >= 2.6.1
+pytest-cov >= 2.2.1
+
+# The following entries provide a pylint installation that's compatible with
+# Python 2.6. The version pinning here was based on the following resources:
+#  - https://github.com/certbot/certbot/issues/97#issuecomment-65632583
+#  - https://bitbucket.org/logilab/pylint/commits/066bfa24a14f59288379638e1d64a9aa856769fd
+pylint < 1.4
+astroid <= 1.3.2

@@ -1,0 +1,21 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "pypy"
+install:
+  - pip install pip-accel
+  - pip-accel install coveralls
+  - pip-accel install --requirement=requirements-checks.txt
+  - pip-accel install --requirement=requirements-tests.txt
+  - LC_ALL=C pip-accel install .
+script:
+  - make check
+  - py.test --cov --cov-fail-under=90 --verbose
+after_success:
+  - coveralls
+branches:
+  except:
+    - /^[0-9]/

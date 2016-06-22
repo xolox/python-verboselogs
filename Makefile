@@ -28,7 +28,8 @@ install:
 	@test -d "$(VIRTUAL_ENV)" || mkdir -p "$(VIRTUAL_ENV)"
 	@test -x "$(VIRTUAL_ENV)/bin/python" || virtualenv --quiet "$(VIRTUAL_ENV)"
 	@test -x "$(VIRTUAL_ENV)/bin/pip" || easy_install pip
-	@test -x "$(VIRTUAL_ENV)/bin/pip-accel" || pip install --quiet pip-accel
+	@test -x "$(VIRTUAL_ENV)/bin/pip-accel" || (pip install --quiet pip-accel && pip-accel install --quiet 'urllib3[secure]')
+	@echo "Updating installation of verboselogs .." >&2
 	@pip uninstall --yes verboselogs &>/dev/null || true
 	@pip install --quiet --editable .
 
@@ -38,12 +39,19 @@ reset:
 	$(MAKE) install
 
 check: install
-	pip-accel install --upgrade --quiet flake8 flake8-docstrings
-	flake8
+	@echo "Updating installation of flake8 .." >&2
+	@pip-accel install --upgrade --quiet --requirement=requirements-checks.txt
+	@flake8
+
+test: install
+	@pip-accel install --quiet detox pytest pytest-cov
+	@py.test --cov
+	@coverage html
+	@detox
 
 docs: install
-	pip-accel install --quiet sphinx
-	cd docs && sphinx-build -nb html -d build/doctrees . build/html
+	@pip-accel install --quiet sphinx
+	@cd docs && sphinx-build -nb html -d build/doctrees . build/html
 
 publish: install
 	git push origin && git push --tags origin
