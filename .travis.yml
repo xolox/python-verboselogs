@@ -13,7 +13,7 @@ install:
   - LC_ALL=C pip-accel install .
 script:
   - make check
-  - py.test --cov --cov-fail-under=90 --verbose
+  - py.test --cov --verbose
 after_success:
   - coveralls
 branches:
