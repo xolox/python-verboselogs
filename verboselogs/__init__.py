@@ -2,7 +2,7 @@
 #
 # Author: Peter Odding <peter@peterodding.com>
 # Last Change: June 23, 2016
-# URL: https://pypi.python.org/pypi/verboselogs
+# URL: https://verboselogs.readthedocs.io
 
 """
 Verbose and spam log levels for Python's :mod:`logging` module.
@@ -16,7 +16,7 @@ register the custom log levels :data:`VERBOSE` and :data:`SPAM` with Python's
 
 import logging
 
-__version__ = '1.2'
+__version__ = '1.3'
 """Semi-standard module versioning."""
 
 VERBOSE = 15

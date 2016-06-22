@@ -2,7 +2,7 @@
 #
 # Author: Peter Odding <peter@peterodding.com>
 # Last Change: June 23, 2016
-# URL: https://github.com/xolox/python-verboselogs
+# URL: https://verboselogs.readthedocs.io
 
 WORKON_HOME ?= $(HOME)/.virtualenvs
 VIRTUAL_ENV ?= $(WORKON_HOME)/verboselogs

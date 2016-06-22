@@ -3,8 +3,8 @@
 # Verbose and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: June 22, 2016
-# URL: https://github.com/xolox/python-verboselogs
+# Last Change: June 23, 2016
+# URL: https://verboselogs.readthedocs.io
 
 """Setup script for the `verboselogs` package."""
 
@@ -40,7 +40,7 @@ setup(
     version=get_version('verboselogs', '__init__.py'),
     description="Verbose logging level for Python's logging module",
     long_description=get_contents('README.rst'),
-    url='https://github.com/xolox/python-verboselogs',
+    url='https://verboselogs.readthedocs.io',
     author='Peter Odding',
     author_email='peter@peterodding.com',
     packages=find_packages(),

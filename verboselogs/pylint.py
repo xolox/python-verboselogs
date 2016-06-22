@@ -1,8 +1,8 @@
 # Verbose and spam log levels for Python's logging module.
 #
 # Author: Glenn Matthews <glenn@e-dad.net>
-# Last Change: June 22, 2016
-# URL: https://github.com/xolox/python-verboselogs
+# Last Change: June 23, 2016
+# URL: https://verboselogs.readthedocs.io
 
 """
 Pylint_ plugin to fix invalid errors about the :mod:`logging` module.

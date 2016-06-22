@@ -137,9 +137,10 @@ the ``verboselogs`` methods and constants to Pylint's understanding of the
 Contact
 -------
 
-The latest version of ``verboselogs`` is available on PyPI_ and GitHub_. For
-bug reports please create an issue on GitHub_. If you have questions,
-suggestions, etc. feel free to send me an e-mail at `peter@peterodding.com`_.
+The latest version of ``verboselogs`` is available on PyPI_ and GitHub_. The
+documentation is hosted on `Read the Docs`_. For bug reports please create an
+issue on GitHub_. If you have questions, suggestions, etc. feel free to send me
+an e-mail at `peter@peterodding.com`_.
 
 License
 -------
@@ -149,11 +150,12 @@ This software is licensed under the `MIT license`_.
 © 2016 Peter Odding.
 
 .. External references:
+.. _descriptions: http://docs.python.org/2/howto/logging.html#when-to-use-logging
 .. _GitHub: https://github.com/xolox/python-verboselogs
+.. _logging.Logger: http://docs.python.org/2/library/logging.html#logger-objects
 .. _MIT license: http://en.wikipedia.org/wiki/MIT_License
+.. _numeric values: http://docs.python.org/2/howto/logging.html#logging-levels
 .. _peter@peterodding.com: peter@peterodding.com
 .. _Pylint: https://pypi.python.org/pypi/pylint
 .. _PyPI: https://pypi.python.org/pypi/verboselogs
-.. _logging.Logger: http://docs.python.org/2/library/logging.html#logger-objects
-.. _numeric values: http://docs.python.org/2/howto/logging.html#logging-levels
-.. _descriptions: http://docs.python.org/2/howto/logging.html#when-to-use-logging
+.. _Read the Docs: https://verboselogs.readthedocs.io
