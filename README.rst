@@ -53,7 +53,9 @@ It's very simple to start using the ``verboselogs`` package:
 >>> logger.verbose("Can we have verbose logging? %s", "Yes we can!")
 
 Here's a skeleton of a very simple Python program with a command line interface
-and configurable logging::
+and configurable logging:
+
+.. code-block:: python
 
    """
    Usage: demo.py [OPTIONS]
@@ -107,19 +109,20 @@ and configurable logging::
    ...
 
 If you want to set ``verboselogs.VerboseLogger`` as the default logging class
-for all subsequent logger instances, you can do so::
+for all subsequent logger instances, you can do so:
+
+.. code-block:: python
 
    import logging
    import verboselogs
 
-   logging.setLoggerClass(verboselogs.VerboseLogger)
+   verboselogs.install()
    logger = logging.getLogger(__name__) # will be a VerboseLogger instance
-
 
 PyLint plugin
 -------------
 
-If using the above ``logging.setLoggerClass()`` approach, Pylint_ is not smart
+If using the above ``verboselogs.install()`` approach, Pylint_ is not smart
 enough to recognize that ``logging`` is using ``verboselogs``, resulting in
 errors like::
 
