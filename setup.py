@@ -3,7 +3,7 @@
 """Setup script for the `verboselogs` package."""
 
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: October 21, 2015
+# Last Change: June 22, 2016
 # URL: https://github.com/xolox/python-verboselogs
 
 # Standard library modules.
@@ -11,7 +11,8 @@ import codecs
 import os
 import sys
 
-from distutils.core import setup
+# De-facto standard solution for Python packaging.
+from setuptools import find_packages, setup
 
 # Find the directory where the source distribution was unpacked.
 source_directory = os.path.dirname(os.path.abspath(__file__))
@@ -37,7 +38,7 @@ setup(
     url='https://github.com/xolox/python-verboselogs',
     author='Peter Odding',
     author_email='peter@peterodding.com',
-    py_modules=['verboselogs'],
+    packages=find_packages(),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

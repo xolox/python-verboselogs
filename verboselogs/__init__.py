@@ -2,14 +2,14 @@
 Verbose and spam log levels for Python's logging module.
 
 Author: Peter Odding <peter@peterodding.com>
-Last Change: June 1, 2016
+Last Change: June 22, 2016
 URL: https://pypi.python.org/pypi/verboselogs
 """
 
 import logging
 
 # Semi-standard module versioning.
-__version__ = '1.1'
+__version__ = '1.2'
 
 
 def add_log_level(value, name):
