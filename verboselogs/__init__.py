@@ -16,7 +16,7 @@ register the custom log levels :data:`VERBOSE` and :data:`SPAM` with Python's
 
 import logging
 
-__version__ = '1.3'
+__version__ = '1.4'
 """Semi-standard module versioning."""
 
 VERBOSE = 15
@@ -112,8 +112,8 @@ class VerboseLogger(logging.Logger):
 
     def verbose(self, *args, **kw):
         """Log a message with level :data:`VERBOSE`. The arguments are interpreted as for :func:`logging.debug()`."""
-        self.log(logging.VERBOSE, *args, **kw)
+        self.log(VERBOSE, *args, **kw)
 
     def spam(self, *args, **kw):
         """Log a message with level :data:`SPAM`. The arguments are interpreted as for :func:`logging.debug()`."""
-        self.log(logging.SPAM, *args, **kw)
+        self.log(SPAM, *args, **kw)
