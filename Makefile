@@ -45,7 +45,7 @@ check: install
 	@flake8
 
 test: install
-	@pip-accel install --quiet detox pytest pytest-cov
+	@pip-accel install --quiet detox --requirement=requirements-tests.txt
 	@py.test --cov
 	@coverage html
 	@detox
