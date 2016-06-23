@@ -18,6 +18,7 @@ default:
 	@echo '    make install   install the package in a virtual environment'
 	@echo '    make reset     recreate the virtual environment'
 	@echo '    make check     check coding style (PEP-8, PEP-257)'
+	@echo '    make test      run the test suite'
 	@echo '    make readme    update usage in readme'
 	@echo '    make docs      update documentation using Sphinx'
 	@echo '    make publish   publish changes to GitHub/PyPI'
@@ -62,8 +63,8 @@ publish: install
 	make clean
 
 clean:
-	rm -Rf *.egg .coverage .tox build dist docs/build htmlcov
+	rm -Rf *.egg .cache .coverage .tox build dist docs/build htmlcov
 	find -depth -type d -name __pycache__ -exec rm -Rf {} \;
 	find -type f -name '*.pyc' -delete
 
-.PHONY: default install reset check docs publish clean
+.PHONY: default install reset check test docs publish clean
