@@ -4,18 +4,25 @@
 # Last Change: June 23, 2016
 # URL: https://verboselogs.readthedocs.io
 
-"""Sphinx documentation configuration for the `verboselogs` project."""
+"""Sphinx documentation configuration for the `verboselogs` package."""
 
 import os
 import sys
 
 # Add the verboselogs source distribution's root directory to the module path.
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath(os.pardir))
 
 # -- General configuration -----------------------------------------------------
 
 # Sphinx extension module names.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx']
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode',
+]
+
+# Sort members by the source order instead of alphabetically.
+autodoc_member_order = 'bysource'
 
 # Paths that contain templates, relative to this directory.
 templates_path = ['templates']
@@ -53,9 +60,6 @@ exclude_patterns = ['build']
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = True
-
-# http://sphinx-doc.org/ext/autodoc.html#confval-autodoc_member_order
-autodoc_member_order = 'bysource'
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
