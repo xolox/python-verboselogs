@@ -1,4 +1,4 @@
-# Verbose and spam log levels for Python's logging module.
+# Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
 # Last Change: June 23, 2016
@@ -38,8 +38,8 @@ class VerboseLogsTestCase(unittest.TestCase):
         assert isinstance(custom_logger, verboselogs.VerboseLogger)
 
     def test_custom_methods(self):
-        """Test :func:`~verboselogs.VerboseLogger.verbose()` and :func:`~verboselogs.VerboseLogger.spam()`."""
-        for name in 'verbose', 'spam':
+        """Test :func:`~verboselogs.VerboseLogger.verbose()`, :func:`~verboselogs.VerboseLogger.notice()`, and :func:`~verboselogs.VerboseLogger.spam()`."""
+        for name in 'notice', 'verbose', 'spam':
             logger = verboselogs.VerboseLogger(random_string())
             logger.log = mock.MagicMock()
             level = getattr(verboselogs, name.upper())

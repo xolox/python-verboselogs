@@ -1,4 +1,4 @@
-# Verbose and spam log levels for Python's logging module.
+# Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
 # Last Change: June 23, 2016
