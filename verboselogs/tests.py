@@ -38,7 +38,13 @@ class VerboseLogsTestCase(unittest.TestCase):
         assert isinstance(custom_logger, verboselogs.VerboseLogger)
 
     def test_custom_methods(self):
-        """Test :func:`~verboselogs.VerboseLogger.verbose()`, :func:`~verboselogs.VerboseLogger.notice()`, and :func:`~verboselogs.VerboseLogger.spam()`."""
+        """
+        Test logging functions.
+
+        Test :func:`~verboselogs.VerboseLogger.verbose()`,
+        :func:`~verboselogs.VerboseLogger.notice()`, and
+        :func:`~verboselogs.VerboseLogger.spam()`.
+        """
         for name in 'notice', 'verbose', 'spam':
             logger = verboselogs.VerboseLogger(random_string())
             logger.log = mock.MagicMock()
