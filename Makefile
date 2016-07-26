@@ -39,9 +39,7 @@ reset:
 	$(MAKE) install
 
 check: install
-	@echo "Updating installation of flake8 .." >&2
-	@pip-accel install --upgrade --quiet --requirement=requirements-checks.txt
-	@flake8
+	@scripts/check-code-style.sh
 
 test: install
 	@pip-accel install --quiet detox --requirement=requirements-tests.txt
