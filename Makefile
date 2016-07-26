@@ -1,7 +1,7 @@
-# Verbose and spam log levels for Python's logging module.
+# Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: June 23, 2016
+# Last Change: July 26, 2016
 # URL: https://verboselogs.readthedocs.io
 
 WORKON_HOME ?= $(HOME)/.virtualenvs
@@ -19,7 +19,6 @@ default:
 	@echo '    make reset     recreate the virtual environment'
 	@echo '    make check     check coding style (PEP-8, PEP-257)'
 	@echo '    make test      run the test suite'
-	@echo '    make readme    update usage in readme'
 	@echo '    make docs      update documentation using Sphinx'
 	@echo '    make publish   publish changes to GitHub/PyPI'
 	@echo '    make clean     cleanup all temporary files'

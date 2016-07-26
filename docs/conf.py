@@ -1,7 +1,7 @@
-# Verbose and spam log levels for Python's logging module.
+# Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: June 23, 2016
+# Last Change: July 26, 2016
 # URL: https://verboselogs.readthedocs.io
 
 """Sphinx documentation configuration for the `verboselogs` package."""
@@ -67,7 +67,7 @@ pygments_style = 'sphinx'
 # Refer to the Python standard library.
 # From: http://twistedmatrix.com/trac/ticket/4582.
 intersphinx_mapping = dict(
-    python=('http://docs.python.org', None),
+    python=('https://docs.python.org/2', None),
 )
 
 # -- Options for HTML output ---------------------------------------------------

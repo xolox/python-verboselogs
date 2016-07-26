@@ -8,9 +8,10 @@ verboselogs: Verbose logging level for Python's logging module
    :target: https://coveralls.io/r/xolox/python-verboselogs?branch=master
 
 The verboselogs_ package extends Python's logging_ module to add the log levels
-VERBOSE_ and SPAM_:
+VERBOSE_, NOTICE_, and SPAM_:
 
 - The VERBOSE level sits between the predefined INFO and DEBUG levels.
+- The NOTICE level sits between the predefined WARNING and INFO levels.
 - The SPAM level sits between the predefined DEBUG and NOTSET levels.
 
 The code to do this is simple and short, but I still don't want to copy/paste
@@ -92,12 +93,14 @@ and configurable logging:
            assert False, "Unhandled option!"
 
    # Configure logger for requested verbosity.
-   if verbosity >= 3:
+   if verbosity >= 4:
        logger.setLevel(logging.SPAM)
-   elif verbosity >= 2:
+   elif verbosity >= 3:
        logger.setLevel(logging.DEBUG)
-   elif verbosity >= 1:
+   elif verbosity >= 2:
        logger.setLevel(logging.VERBOSE)
+   elif verbosity >= 1:
+       logger.setLevel(logging.NOTICE)
    elif verbosity < 0:
        logger.setLevel(logging.WARNING)
 
@@ -134,8 +137,8 @@ Overview of logging levels
 --------------------------
 
 The table below shows the names, `numeric values`_ and descriptions_ of the
-predefined log levels and the VERBOSE and SPAM levels defined by this package,
-plus some notes that I added.
+predefined log levels and the VERBOSE, NOTICE, and SPAM levels defined by this
+package, plus some notes that I added.
 
 ========  =====  =============================  =============================
 Level     Value  Description                    Notes
@@ -166,6 +169,10 @@ VERBOSE   15     Detailed information that
                  level debugging information.
 INFO      20     Confirmation that things
                  are working as expected.
+NOTICE    25     Auditing information about
+                 things that have multiple
+                 success paths or may need to
+                 be reverted.
 WARNING   30     An indication that something
                  unexpected happened, or
                  indicative of some problem
@@ -210,6 +217,7 @@ This software is licensed under the `MIT license`_.
 .. _PyPI: https://pypi.python.org/pypi/verboselogs
 .. _Read the Docs: https://verboselogs.readthedocs.io
 .. _SPAM: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.SPAM
+.. _NOTICE: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.NOTICE
 .. _VERBOSE: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.VERBOSE
 .. _VerboseLogger: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.VerboseLogger
 .. _verboselogs.install(): http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.install

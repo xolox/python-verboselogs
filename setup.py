@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-# Verbose and spam log levels for Python's logging module.
+# Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: June 23, 2016
+# Last Change: July 26, 2016
 # URL: https://verboselogs.readthedocs.io
 
 """Setup script for the `verboselogs` package."""
