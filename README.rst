@@ -16,7 +16,7 @@ VERBOSE_, NOTICE_, and SPAM_:
 
 The code to do this is simple and short, but I still don't want to copy/paste
 it to every project I'm working on, hence this package. It's currently tested
-on Python 2.6, 2.7, 3.4, 3.5 and PyPy.
+on Python 2.6, 2.7, 3.4, 3.5, 3.6 and PyPy.
 
 .. contents::
    :local:
