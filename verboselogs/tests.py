@@ -47,12 +47,12 @@ class VerboseLogsTestCase(unittest.TestCase):
         """
         for name in 'notice', 'verbose', 'spam':
             logger = verboselogs.VerboseLogger(random_string())
-            logger.log = mock.MagicMock()
+            logger._log = mock.MagicMock()
             level = getattr(verboselogs, name.upper())
             method = getattr(logger, name.lower())
             message = "Any random message"
             method(message)
-            logger.log.assert_called_with(level, message)
+            logger._log.assert_called_with(level, message, ())
 
     def test_pylint_plugin(self):
         """Test the :mod:`verboselogs.pylint` module."""

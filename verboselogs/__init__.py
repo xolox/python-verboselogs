@@ -125,14 +125,17 @@ class VerboseLogger(logging.Logger):
         logging.Logger.__init__(self, *args, **kw)
         self.parent = logging.getLogger()
 
-    def notice(self, *args, **kw):
+    def notice(self, msg, *args, **kw):
         """Log a message with level :data:`NOTICE`. The arguments are interpreted as for :func:`logging.debug()`."""
-        self.log(NOTICE, *args, **kw)
+        if self.isEnabledFor(NOTICE):
+            self._log(NOTICE, msg, args, **kw)
 
-    def verbose(self, *args, **kw):
+    def verbose(self, msg, *args, **kw):
         """Log a message with level :data:`VERBOSE`. The arguments are interpreted as for :func:`logging.debug()`."""
-        self.log(VERBOSE, *args, **kw)
+        if self.isEnabledFor(VERBOSE):
+            self._log(VERBOSE, msg, args, **kw)
 
-    def spam(self, *args, **kw):
+    def spam(self, msg, *args, **kw):
         """Log a message with level :data:`SPAM`. The arguments are interpreted as for :func:`logging.debug()`."""
-        self.log(SPAM, *args, **kw)
+        if self.isEnabledFor(SPAM):
+            self._log(SPAM, msg, args, **kw)
