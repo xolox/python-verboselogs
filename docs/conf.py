@@ -1,7 +1,7 @@
 # Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: July 26, 2016
+# Last Change: March 7, 2017
 # URL: https://verboselogs.readthedocs.io
 
 """Sphinx documentation configuration for the `verboselogs` package."""
@@ -35,7 +35,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'verboselogs'
-copyright = u'2016, Peter Odding'
+copyright = u'2017, Peter Odding'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
