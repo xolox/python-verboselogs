@@ -1,7 +1,7 @@
 # Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: March 7, 2017
+# Last Change: August 7, 2017
 # URL: https://verboselogs.readthedocs.io
 
 """
@@ -17,7 +17,7 @@ module.
 
 import logging
 
-__version__ = '1.6'
+__version__ = '1.6.1'
 """Semi-standard module versioning."""
 
 NOTICE = 25
