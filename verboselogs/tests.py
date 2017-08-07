@@ -1,7 +1,7 @@
 # Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: July 26, 2016
+# Last Change: August 7, 2017
 # URL: https://verboselogs.readthedocs.io
 
 """Test suite for the `verboselogs` package."""
@@ -37,22 +37,27 @@ class VerboseLogsTestCase(unittest.TestCase):
         custom_logger = logging.getLogger(random_string())
         assert isinstance(custom_logger, verboselogs.VerboseLogger)
 
-    def test_custom_methods(self):
-        """
-        Test logging functions.
+    def test_notice_method(self):
+        """Test the :func:`~verboselogs.VerboseLogger.notice()` method."""
+        self.check_custom_level('notice')
 
-        Test :func:`~verboselogs.VerboseLogger.verbose()`,
-        :func:`~verboselogs.VerboseLogger.notice()`, and
-        :func:`~verboselogs.VerboseLogger.spam()`.
-        """
-        for name in 'notice', 'verbose', 'spam':
-            logger = verboselogs.VerboseLogger(random_string())
-            logger._log = mock.MagicMock()
-            level = getattr(verboselogs, name.upper())
-            method = getattr(logger, name.lower())
-            message = "Any random message"
-            method(message)
-            logger._log.assert_called_with(level, message, ())
+    def test_verbose_method(self):
+        """Test the :func:`~verboselogs.VerboseLogger.verbose()` method."""
+        self.check_custom_level('verbose')
+
+    def test_spam_method(self):
+        """Test the :func:`~verboselogs.VerboseLogger.spam()` method."""
+        self.check_custom_level('spam')
+
+    def check_custom_level(self, name):
+        """Check a custom log method."""
+        logger = verboselogs.VerboseLogger(random_string())
+        logger._log = mock.MagicMock()
+        level = getattr(verboselogs, name.upper())
+        method = getattr(logger, name.lower())
+        message = "Any random message"
+        method(message)
+        logger._log.assert_called_with(level, message, ())
 
     def test_pylint_plugin(self):
         """Test the :mod:`verboselogs.pylint` module."""
