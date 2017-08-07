@@ -18,7 +18,7 @@ Python's :mod:`logging` module.
 
 import logging
 
-__version__ = '1.6.2'
+__version__ = '1.7'
 """Semi-standard module versioning."""
 
 NOTICE = 25
