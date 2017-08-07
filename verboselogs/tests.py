@@ -52,6 +52,9 @@ class VerboseLogsTestCase(unittest.TestCase):
     def check_custom_level(self, name):
         """Check a custom log method."""
         logger = verboselogs.VerboseLogger(random_string())
+        # Gotcha: If we use NOTSET (0) here the level will be inherited from
+        # the parent logger and our custom log level may be filtered out.
+        logger.setLevel(1)
         logger._log = mock.MagicMock()
         level = getattr(verboselogs, name.upper())
         method = getattr(logger, name.lower())
