@@ -143,10 +143,12 @@ package, plus some notes that I added.
 ========  =====  =============================  =============================
 Level     Value  Description                    Notes
 ========  =====  =============================  =============================
-NOTSET    0      When a logger is created, the  In practice this level is
-                 level is set to NOTSET (note   never explicitly used; it's
-                 that the root logger is        mentioned here only for
-                 created with level WARNING).   completeness.
+NOTSET    0      When a logger is created, the  This level isn't intended to
+                 level is set to NOTSET (note   be used explicitly, however
+                 that the root logger is        when a logger has its level
+                 created with level WARNING).   set to NOTSET its effective
+                                                level will be inherited from
+                                                the parent logger.
 SPAM      5      Way too verbose for regular
                  debugging, but nice to have
                  when someone is getting
