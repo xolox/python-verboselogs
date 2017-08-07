@@ -13,21 +13,16 @@ import string
 import sys
 import unittest
 
-# Modules included in our package.
-import verboselogs
-
 # Test dependencies.
-import coloredlogs
 import mock
+
+# The module we're testing.
+import verboselogs
 
 
 class VerboseLogsTestCase(unittest.TestCase):
 
     """Container for the `verboselogs` tests."""
-
-    def setUp(self):
-        """Enable logging to the terminal."""
-        coloredlogs.install(level='DEBUG')
 
     def test_install(self):
         """Test the :func:`verboselogs.install()` function."""
