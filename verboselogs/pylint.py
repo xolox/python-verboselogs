@@ -1,7 +1,7 @@
 # Verbose, notice, and spam log levels for Python's logging module.
 #
 # Author: Glenn Matthews <glenn@e-dad.net>
-# Last Change: July 26, 2016
+# Last Change: August 7, 2017
 # URL: https://verboselogs.readthedocs.io
 
 """
@@ -18,16 +18,16 @@ def register(linter):
 
 
 def verboselogs_class_transform(cls):
-    """Make Pylint aware of ``RootLogger.verbose()``, ``RootLogger.notice()``, and ``RootLogger.spam()``."""
+    """Make Pylint aware of our custom logger methods."""
     if cls.name == 'RootLogger':
-        for meth in ['notice', 'verbose', 'spam']:
+        for meth in ['notice', 'spam', 'success', 'verbose']:
             cls.locals[meth] = [scoped_nodes.Function(meth, None)]
 
 
 def verboselogs_module_transform(mod):
-    """Make Pylint aware of ``logging.VERBOSE``, ``logging.notice()``, and ``logging.SPAM``."""
+    """Make Pylint aware of our custom log levels."""
     if mod.name == 'logging':
-        for const in ['NOTICE', 'VERBOSE', 'SPAM']:
+        for const in ['NOTICE', 'SPAM', 'SUCCESS', 'VERBOSE']:
             mod.locals[const] = [nodes.Const(const)]
 
 

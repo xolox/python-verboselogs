@@ -8,11 +8,12 @@ verboselogs: Verbose logging level for Python's logging module
    :target: https://coveralls.io/r/xolox/python-verboselogs?branch=master
 
 The verboselogs_ package extends Python's logging_ module to add the log levels
-VERBOSE_, NOTICE_, and SPAM_:
+NOTICE_, SPAM_, SUCCESS_ and VERBOSE_:
 
-- The VERBOSE level sits between the predefined INFO and DEBUG levels.
 - The NOTICE level sits between the predefined WARNING and INFO levels.
 - The SPAM level sits between the predefined DEBUG and NOTSET levels.
+- The SUCCESS level sits between the predefined WARNING and ERROR levels.
+- The VERBOSE level sits between the predefined INFO and DEBUG levels.
 
 The code to do this is simple and short, but I still don't want to copy/paste
 it to every project I'm working on, hence this package. It's currently tested
@@ -182,6 +183,8 @@ WARNING   30     An indication that something
                  ‘disk space low’). The
                  software is still working
                  as expected.
+SUCCESS   35     A very explicit confirmation
+                 of success.
 ERROR     40     Due to a more serious
                  problem, the software has not
                  been able to perform some
@@ -212,6 +215,7 @@ This software is licensed under the `MIT license`_.
 .. _GitHub: https://github.com/xolox/python-verboselogs
 .. _logging: http://docs.python.org/library/logging.html
 .. _MIT license: http://en.wikipedia.org/wiki/MIT_License
+.. _NOTICE: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.NOTICE
 .. _numeric values: http://docs.python.org/howto/logging.html#logging-levels
 .. _per user site-packages directory: https://www.python.org/dev/peps/pep-0370/
 .. _peter@peterodding.com: peter@peterodding.com
@@ -219,7 +223,7 @@ This software is licensed under the `MIT license`_.
 .. _PyPI: https://pypi.python.org/pypi/verboselogs
 .. _Read the Docs: https://verboselogs.readthedocs.io
 .. _SPAM: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.SPAM
-.. _NOTICE: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.NOTICE
+.. _SUCCESS: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.SUCCESS
 .. _VERBOSE: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.VERBOSE
 .. _VerboseLogger: http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.VerboseLogger
 .. _verboselogs.install(): http://verboselogs.readthedocs.io/en/latest/api.html#verboselogs.install

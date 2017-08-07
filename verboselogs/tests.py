@@ -36,13 +36,17 @@ class VerboseLogsTestCase(unittest.TestCase):
         """Test the :func:`~verboselogs.VerboseLogger.notice()` method."""
         self.check_custom_level('notice')
 
-    def test_verbose_method(self):
-        """Test the :func:`~verboselogs.VerboseLogger.verbose()` method."""
-        self.check_custom_level('verbose')
-
     def test_spam_method(self):
         """Test the :func:`~verboselogs.VerboseLogger.spam()` method."""
         self.check_custom_level('spam')
+
+    def test_success_method(self):
+        """Test the :func:`~verboselogs.VerboseLogger.success()` method."""
+        self.check_custom_level('success')
+
+    def test_verbose_method(self):
+        """Test the :func:`~verboselogs.VerboseLogger.verbose()` method."""
+        self.check_custom_level('verbose')
 
     def check_custom_level(self, name):
         """Check a custom log method."""
