@@ -1,4 +1,6 @@
 # Python packages required to run `make check'.
 flake8 >= 2.6.0
 flake8-docstrings >= 0.2.8
+# pydocstyle dropped support for Python 2.7 and pypy in 4.0
+pydocstyle < 4.0.0
 pyflakes >= 1.2.3
