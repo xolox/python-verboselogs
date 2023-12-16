@@ -148,19 +148,27 @@ class VerboseLogger(logging.Logger):
     def notice(self, msg, *args, **kw):
         """Log a message with level :data:`NOTICE`. The arguments are interpreted as for :func:`logging.debug()`."""
         if self.isEnabledFor(NOTICE):
+            kw.setdefault('stacklevel', 1)
+            kw['stacklevel'] += 1
             self._log(NOTICE, msg, args, **kw)
 
     def spam(self, msg, *args, **kw):
         """Log a message with level :data:`SPAM`. The arguments are interpreted as for :func:`logging.debug()`."""
         if self.isEnabledFor(SPAM):
+            kw.setdefault('stacklevel', 1)
+            kw['stacklevel'] += 1
             self._log(SPAM, msg, args, **kw)
 
     def success(self, msg, *args, **kw):
         """Log a message with level :data:`SUCCESS`. The arguments are interpreted as for :func:`logging.debug()`."""
         if self.isEnabledFor(SUCCESS):
+            kw.setdefault('stacklevel', 1)
+            kw['stacklevel'] += 1
             self._log(SUCCESS, msg, args, **kw)
 
     def verbose(self, msg, *args, **kw):
         """Log a message with level :data:`VERBOSE`. The arguments are interpreted as for :func:`logging.debug()`."""
         if self.isEnabledFor(VERBOSE):
+            kw.setdefault('stacklevel', 1)
+            kw['stacklevel'] += 1
             self._log(VERBOSE, msg, args, **kw)
